@@ -1,0 +1,163 @@
+<div
+  id="mobile-sidebar-container"
+  class="fixed inset-0 flex z-40 lg:hidden"
+  aria-modal="true"
+  style="display: none;"
+  role="region"
+>
+  <div class="fixed inset-0 " phx-click={hide_mobile_sidebar()}></div>
+
+  <div
+    id="mobile-sidebar"
+    class="relative flex-1 flex flex-col w-full space-y-16 pb-4 bg-primary items-center hidden min-h-screen cormorant text-2xl"
+  >
+    <div class="absolute top-0 right-0 p-4">
+      <button
+        type="button"
+        id="hide-mobile-sidebar"
+        aria-expanded="true"
+        aria-controls="mobile-sidebar"
+        phx-click={hide_mobile_sidebar()}
+      >
+        <picture>
+          <img src="https://jessica-clawson-website.s3.us-west-1.amazonaws.com/images/close_sidebar.svg" />
+        </picture>
+      </button>
+    </div>
+
+    <body class="relative">
+      <div class="fixed-border h-full"></div>
+      <!-- Left border -->
+      <div class="fixed-border h-full right-0"></div>
+      <!-- Right border -->
+      <div class="fixed-border w-full bottom-0"></div>
+      <!-- Bottom border -->
+
+  <!-- Your webpage content goes here -->
+    </body>
+
+    <div>
+      <a
+        href="/"
+        class={[
+          (@page_title === "home" && "font-semibold opacity-100") || "opacity-70",
+          "hover:opacity-100"
+        ]}
+      >
+        Home
+      </a>
+    </div>
+
+    <div>
+      <a
+        href="/about"
+        class={[
+          (@page_title === "about" && "font-semibold opacity-100") || "opacity-70",
+          "hover:opacity-100"
+        ]}
+      >
+        About
+      </a>
+    </div>
+
+    <button phx-click={hide_mobile_sidebar()}>
+      <a href="#get_in_touch" class="opacity-70 hover:opacity-100">
+        Contact
+      </a>
+    </button>
+  </div>
+
+  <div class="flex-shrink-0 w-14" aria-hidden="true">
+    <!-- Dummy element to force sidebar to shrink to fit close icon -->
+  </div>
+</div>
+
+<div class="flex flex-col w-full h-screen">
+  <header class="bg-primary text-secondary">
+    <section class="max-w px-6 pt-6 md:px-12 md:pt-12 flex justify-between items-center">
+      <a href="/">
+        <picture>
+          <source
+            media="(max-width:440px)"
+            srcset="https://jessica-clawson-website.s3.us-west-1.amazonaws.com/images/my_logo_sm.svg"
+          />
+          <source
+            media="(max-width:844px)"
+            srcset="https://jessica-clawson-website.s3.us-west-1.amazonaws.com/images/my_logo_md.svg"
+          />
+          <img src="https://jessica-clawson-website.s3.us-west-1.amazonaws.com/images/my_logo.svg" />
+        </picture>
+      </a>
+      <div>
+        <nav aria-label="main">
+          <div class="hidden md:block space-x-16 text-xl font-inter font-light">
+            <a
+              href="/"
+              class={[
+                (@page_title === "home" && "font-semibold opacity-100") || "opacity-70",
+                "hover:opacity-100"
+              ]}
+            >
+              Home
+            </a>
+            <a
+              href="/about"
+              class={[
+                (@page_title === "about" && "font-semibold opacity-100") || "opacity-70",
+                "hover:opacity-100"
+              ]}
+            >
+              About
+            </a>
+            <a href="#get_in_touch" class="opacity-70 hover:opacity-100">Contact</a>
+          </div>
+
+          <button class="md:hidden" phx-click={show_mobile_sidebar()}>
+            <picture>
+              <img
+                src="https://jessica-clawson-website.s3.us-west-1.amazonaws.com/images/menu.svg"
+                alt="Menu"
+              />
+            </picture>
+          </button>
+        </nav>
+      </div>
+    </section>
+  </header>
+
+  <main class="h-max bg-primary cursor-fancy">
+    <div>
+      <%= @inner_content %>
+    </div>
+
+    <footer
+      class="max-w bg-secondary_dark text-primary py-24 flex flex-col md:flex-row justify-normal md:justify-around items-center md:items-end"
+      id="get_in_touch"
+    >
+      <div class="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-cormorant">
+        Get  In <br /> Touch
+      </div>
+      <div class="underline text-lg lg:text-xl h-full flex flex-col-reverse font-inter font-extralight text-end pt-5 mb-4">
+        <ul class="flex space-x-2">
+          <li>
+            <a href="mailto:jesscclawson@gmail.com" class="button contact">Say Hi</a>
+          </li>
+          <div>|</div>
+          <li>
+            <a href="https://www.linkedin.com/in/jessica-clawson-11574b290/">Linkedin</a>
+          </li>
+          <div>|</div>
+          <li>
+            <a href="https://www.behance.net/jessicaclawson1">Behance</a>
+          </li>
+          <div>|</div>
+          <li>
+            <a href="https://jessica-clawson-website.s3.us-west-1.amazonaws.com/images/Clawson_Jessica_Resume.pdf">
+              Resume
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </main>
+</div>

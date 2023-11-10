@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" class="[scrollbar-gutter:stable]">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="csrf-token" content={get_csrf_token()} />
+    <.live_title suffix=" · Phoenix Framework">
+      <%= assigns[:page_title] || "Jessica" %>
+    </.live_title>
+    <link phx-track-static rel="stylesheet" href={~p"/assets/app.css"} />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Inter:200,300&display=swap"
+    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cormorant+SC:200,300" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Over+the+Rainbow" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png" />
+
+    <script defer phx-track-static type="text/javascript" src={~p"/assets/app.js"}>
+    </script>
+  </head>
+  <body class="text-secondary">
+    <%= @inner_content %>
+  </body>
+</html>
