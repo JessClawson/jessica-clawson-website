@@ -19,23 +19,14 @@ module.exports = {
         hoverOnlyWhenSupported: true
       },
       width: {
-        '76': '19rem',
-        '84': '21rem',
         '108': '27rem'
       },
-      height: {
-               sm: '16rem',
-               md: '32rem',
-               lg: '34rem',
-               xl: '38rem',
-              },
       screens: {
         'sm' : '330px',
         'md' : '545px',
         'tablet': '650px',
         'lg' : '844px',
         'xl' : '1200px',
-        // "btn" : ""
       },
       fontFamily: {
         inter: ["Inter"],
@@ -47,75 +38,6 @@ module.exports = {
         secondary: "#3B4021",
         secondary_dark: "#1D1F11",
       },
-      keyframes: {
-        grow: {
-          '0%': { transform: 'scale(1)'},
-          '100%': { transform: 'scale(1.5)'}
-        },
-        pulse2: {
-          '0%': {transform: 'scale(1)'},
-          '10%': {transform: 'scale(1.3)'},
-          '20%': {transform: 'scale(1.6)'},
-          '30%': {transform: 'scale(1.3)'},
-          '40%': {transform: 'scale(1.6)'},
-          '50%': {transform: 'scale(1.3)'},
-          '60%': {transform: 'scale(1.6)'},
-          '70%': {transform: 'scale(1.3)'},
-          '80%': {transform: 'scale(1.6)'},
-          '90%': {transform: 'scale(1.3)'},
-          '100%': {transform: 'scale(1)'},
-        },
-        wave: {
-          '0%': { transform: 'rotate(0.0deg)' },
-          '10%': { transform: 'rotate(14deg)' },
-          '20%': { transform: 'rotate(-8deg)' },
-          '30%': { transform: 'rotate(14deg)' },
-          '40%': { transform: 'rotate(-4deg)' },
-          '50%': { transform: 'rotate(10.0deg)' },
-          '60%': { transform: 'rotate(0.0deg)' },
-          '100%': { transform: 'rotate(0.0deg)' },
-        },
-        move: {
-            "0%": { transform: 'translateX(-0%)' },
-            "100%": { transform: 'translateX(-100%)'},
-        },
-        move2: {
-          '0%': {
-            transform: 'translateX(0%)'
-          },
-          '50%': {
-            transform: 'translateX(100%)'
-          },
-          '51%': {
-            transform: 'translateX(-100%)'
-          },
-          '100%': {
-            transform: 'translateX(0%)'
-          }
-        },
-        slide: {
-          '0%': {
-            transform: 'translate(0%)'
-          },
-          '100%': {
-            transform: 'translate(-100%)'
-          }
-        }
-      },
-        animation: {
-          'wave': 'wave 2s linear infinite',
-          'move-text': "move 80s linear infinite",
-          'move-text-fast': "move 30s linear infinite",
-          'move-text2': "move2 20s linear infinite",
-          'grow': "grow 1s linear",
-          'pulse2': "pulse2 8s linear infinite",
-          'slide': "slide 80s linear infinite"
-      }
-      //  .animation-container {
-      //    animation: slide 80s linear infinite; /* Adjust the duration (10s in this case) as needed */
-      //    white-space: nowrap; /* Prevents the text from wrapping */
-      // }
-
     },
   },
   plugins: [
